@@ -1,29 +1,50 @@
 package conta;
 
 import java.util.Scanner;
-
 import conta.model.Conta;
-
 import conta.util.Cores;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 
 public class Menu {
 
 	public static void main(String[] args) {
 
 		Scanner leia = new Scanner(System.in);
-		
-		Conta c1 = new Conta(12345, 12, 01, "Johnnata Silva", 1500000.0f);
-		
-		c1.visualizar();
 
 		int opcao;
+		
+		 // Teste da Classe Conta
+		Conta c1 = new Conta(12345, 123, 01, "Johnnata", 10000.0f);
+		c1.visualizar();
+		c1.sacar(12000.0f);
+		c1.visualizar();
+		c1.depositar(5000.0f);
+		c1.visualizar();
+        
+		// Teste da Classe Conta Corrente
+		ContaCorrente cc1 = new ContaCorrente(54321, 321, 01, "Johnnata Silva", 15000.0f, 1000.0f);
+		cc1.visualizar();
+		cc1.sacar(12000.0f);
+		cc1.visualizar();
+		cc1.depositar(5000.0f);
+		cc1.visualizar();
+		
+        // Teste da Classe Conta Poupança
+		ContaPoupanca cp1 = new ContaPoupanca(24680, 135, 02, "JS SIlva", 100000.0f, 15);
+		cp1.visualizar();
+        cp1.sacar(1000.0f);
+		cp1.visualizar();
+		cp1.depositar(5000.0f);
+		cp1.visualizar();
+
 
 		while (true) {
 
-			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND +
-					"*****************************************************");
+			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND
+					+ "*****************************************************");
 			System.out.println("                                                     ");
-			System.out.println("              ⚔🛡️  WESTEROS BANK  🛡️⚔               ");
+			System.out.println("              ⚔🛡️  WESTEROS BANK  🛡️⚔                ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("                                                     ");
@@ -40,10 +61,11 @@ public class Menu {
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     ");
-			
+
 			opcao = leia.nextInt();
 			if (opcao == 9) {
-				System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + "\nWesteros Bank - Guarde seus tesouros onde nem os dragões conseguem tocar! 🔥");
+				System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND
+						+ "\nWesteros Bank - Guarde seus tesouros onde nem os dragões conseguem tocar! 🔥");
 				sobre();
 				leia.close();
 				System.exit(0);
