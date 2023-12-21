@@ -62,12 +62,11 @@ public class ContaController implements IContaRepository {
 
 		if (conta != null) {
 
-			if (conta.sacar(valor) == true) {
+			if (conta.sacar(valor) == true)
 				System.out.println("\nO Saque na Conta numero: " + numero + " foi efetuado com sucesso!");
 
 		} else
 			System.out.println("\nA Conta numero: " + numero + " não foi encontrada!");
-		}
 	}
 
 	@Override
